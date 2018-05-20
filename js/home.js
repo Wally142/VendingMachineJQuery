@@ -31,7 +31,7 @@ function getSnacks() {
                 var snackPrice = '<p>' + price + '<p>'
                 var snackQuantity = '<p>' + quantity + '<p>'
                 var snackId = '<p>' + id + '<p>'
-                var img = '<a onclick="showID(' + id + ' )"><img src="images/' + id + '.png"></a>';
+                var img = '<a onclick="showID(' + id + ' )"><img class="snickers" src="images/' + id + '.png"></a>';
                 vendingSpot.append(snackName);
                 vendingSpot.append('Cost:' + snackPrice);
                 vendingSpot.append('Quantity Left:' + snackQuantity);
@@ -56,10 +56,14 @@ $('#purchase').click(function () {
         success: function (data, status) {
             console.log('Purchase Successful!');
             console.log(data);
-            $('#message').val('Thank You! Enjoy!')
+            $('#message').val("Thank You!");
             var change = data.quarters + ' quarters    ' + data.dimes + ' dimes    ' + data.nickels + ' nickels ';
             $('#change').val(change);
             getSnacks();
+        },
+        error: function (data) {
+            console.log(data.responseJSON.message);
+            $('#message').val(data.responseJSON.message);
         }
     });
 });
@@ -89,7 +93,12 @@ function addNickel() {
     $('#money').val(moneyIn);
 }
 
-$('#returnChange')
+$('#returnChange').click(function () {
+    $('#money').val("");
+    $('#change').val("");
+    $('#item').val("");
+    $('#message').val("Transaction Ended, Please Come Again");
+});
 
 
 
