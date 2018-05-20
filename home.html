@@ -9,7 +9,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
-        <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Vending Machine</title>
 </head>
 
@@ -18,55 +18,52 @@
     <h1 class="text-center">World's Best Vending Machine</h1>
     <hr>
 
-    <div class ="container">
+    <div class="container">
         <div class="row">
-        <div class="col-md-9" id="vending">
-        
+            <div class="col-md-9" id="vending">
+            </div>
         </div>
-</div>
     </div>
 
     <div class="container">
         <div class="row">
-           
-           
+
             <div class="col-md-3 box">
                 <h3>Total $ In</h3>
-                <input type="text">
+                <input id="money" type="text" readonly>
                 <br>
-                <button>Add Quarter</button>
-                <button>Add Dime</button>
-                <button>Add Nickel</button>
-                <button>Add Penny</button>
+                <button id="dollar" value="1">Add Dollar</button>
+                <button id="quarter" value="0.25">Add Quarter</button>
+                <button id="dime" value="0.10">Add Dime</button>
+                <button id="nickel" value="0.05">Add Nickel</button>
                 <hr>
             </div>
         </div>
-</div>
-<div class="container">
-    <div class="row">
-        
-        <div class="col-md-3">
-            <h3>Messages</h3>
-            <input type="text">
-            <br>
-            <span>Item:</span>
-            <input type="text">
-            <button class="btn btn-info">Make Purchase</button>
-            <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+                <h3>Messages</h3>
+                <input id="message" type="text" readonly>
+                <br>
+                <span>Item:</span>
+                <input id="item" type="text" readonly>
+                <button id="purchase" class="btn btn-info">Make Purchase</button>
+                <hr>
+            </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-       
-        
-        <div class="col-md-3">
-            <h3>Change</h3>
-            <input type="text">
-            <button>Change Return</button>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+                <h3>Change</h3>
+                <input class="changeInput" id="change" type="text" readonly>
+                <button id="returnChange">Change Return</button>
+            </div>
         </div>
     </div>
-</div>
 
 
 
