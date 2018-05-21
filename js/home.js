@@ -21,7 +21,7 @@ function getSnacks() {
 
                 $('#snacks').append('<div class="vending col-md-4 box"></div>');
                 var div = $('.vending');
-                
+
                 var snackName = '<p>' + name + '</p>'
                 var snackPrice = '<p> Cost: ' + price + '</p>'
                 var snackQuantity = '<p> Quantity Left: ' + quantity + '</p>'
@@ -94,6 +94,7 @@ $('#returnChange').click(function () {
     $('#change').val("");
     $('#item').val("");
     $('#message').val("");
+    moneyIn = 0;
 });
 
 
