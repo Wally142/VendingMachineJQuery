@@ -1,42 +1,38 @@
 
 
-var vendingSpot = $('#vending');
+
 var moneyIn = 0;
 
 getSnacks();
 
 function getSnacks() {
 
-    vendingSpot.empty();
+    $('#snacks').empty();
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080/items',
         success: function (data, status) {
+
             $.each(data, function (index, item) {
                 var name = item.name
                 var price = item.price;
                 var quantity = item.quantity;
                 var id = item.id;
 
-                // if (index > 3){
-                //     var div = vendingSpot.append('<div>')
-                //     div.addClass('row');
-                //     var div1 = div.append('<div>')
-                //     div1.addClass('col-md-4');
-                // }
-
-                // var div = vendingSpot.addClass('row');
-                // var div1 = vendingSpot.addClass('col-md-3');
-                var snackName = '<p>' + name + '<p>'
-                var snackPrice = '<p>' + price + '<p>'
-                var snackQuantity = '<p>' + quantity + '<p>'
-                var snackId = '<p>' + id + '<p>'
+                $('#snacks').append('<div class="vending col-md-4 box"></div>');
+                var div = $('.vending');
+                
+                var snackName = '<p>' + name + '</p>'
+                var snackPrice = '<p> Cost: ' + price + '</p>'
+                var snackQuantity = '<p> Quantity Left: ' + quantity + '</p>'
+                var snackId = '<p> Item Number: ' + id + '</p>'
                 var img = '<a onclick="showID(' + id + ' )"><img class="snickers" src="images/' + id + '.png"></a>';
-                vendingSpot.append(snackName);
-                vendingSpot.append('Cost:' + snackPrice);
-                vendingSpot.append('Quantity Left:' + snackQuantity);
-                vendingSpot.append('Item ID:' + snackId);
-                vendingSpot.append(img);
+                
+                div.append(snackName);
+                div.append(snackPrice);
+                div.append(snackQuantity);
+                div.append(snackId);
+                div.append(img);
             });
         }
     });
@@ -97,7 +93,7 @@ $('#returnChange').click(function () {
     $('#money').val("");
     $('#change').val("");
     $('#item').val("");
-    $('#message').val("Transaction Ended, Please Come Again");
+    $('#message').val("");
 });
 
 

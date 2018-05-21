@@ -20,48 +20,46 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-9" id="vending">
-            </div>
+            <div class="col-md-9" id="snacks">
+             
         </div>
-    </div>
 
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-3 box">
+        <div class="col-md-3">
+            <div class="total">
                 <h3>Total $ In</h3>
                 <input id="money" type="text" readonly>
                 <br>
-                <button id="dollar" value="1">Add Dollar</button>
-                <button id="quarter" value="0.25">Add Quarter</button>
-                <button id="dime" value="0.10">Add Dime</button>
-                <button id="nickel" value="0.05">Add Nickel</button>
+                <br>
+                <button class="btn btn-primary" id="dollar" value="1">Add Dollar</button>
+                <button class="btn btn-primary" id="quarter" value="0.25">Add Quarter</button>
+                <br>
+                <br>
+                <button class="btn btn-primary" id="dime" value="0.10">Add Dime</button>
+                <button class="btn btn-primary" id="nickel" value="0.05">Add Nickel</button>
                 <hr>
             </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
 
-            <div class="col-md-3">
+            <div class="message">
                 <h3>Messages</h3>
                 <input class="input" id="message" type="text" readonly>
                 <br>
+                <br>
                 <span>Item:</span>
                 <input id="item" type="text" readonly>
-                <button id="purchase" class="btn btn-info">Make Purchase</button>
+                <br>
+                <br>
+                <button id="purchase" class="btn btn-primary">Make Purchase</button>
                 <hr>
             </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
 
-            <div class="col-md-3">
+            <div class="coins">
                 <h3>Change</h3>
                 <input class="input" id="change" type="text" readonly>
-                <button id="returnChange">Change Return</button>
+                <br>
+                <br>
+                <button class="btn btn-success" id="returnChange">Change Return</button>
             </div>
+
         </div>
     </div>
 
