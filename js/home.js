@@ -19,8 +19,8 @@ function getSnacks() {
                 var quantity = item.quantity;
                 var id = item.id;
 
-                $('#snacks').append('<div class="vending col-md-4 box"></div>');
-                var div = $('.vending');
+                
+                var div = $('<div class="vending col-md-4 box"></div>');
 
                 var snackName = '<p>' + name + '</p>'
                 var snackPrice = '<p> Cost: ' + price + '</p>'
@@ -33,6 +33,7 @@ function getSnacks() {
                 div.append(snackQuantity);
                 div.append(snackId);
                 div.append(img);
+                $('#snacks').append(div);
             });
         }
     });
@@ -56,6 +57,8 @@ $('#purchase').click(function () {
             var change = data.quarters + ' quarters    ' + data.dimes + ' dimes    ' + data.nickels + ' nickels ';
             $('#change').val(change);
             getSnacks();
+            moneyIn = 0;
+            ('#money').val(moneyIn);
         },
         error: function (data) {
             console.log(data.responseJSON.message);
